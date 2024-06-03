@@ -1,29 +1,5 @@
-# vue-portfolio
+# 정휘원의 FE-vue 실험실
 
-This template should help get you started developing with Vue 3 in Vite.
-
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+|무엇을?|언어|언제?|
+|---------|---|---|
+|Vue를 활용한 포트폴리오, 블로그 겸사겸사 작성 시작| Vue.js | 24/06/03 |
