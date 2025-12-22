@@ -8,7 +8,7 @@ const __dirname = path.dirname(__filename);
 // CHANGED: Target specific subdirectory "My Tech 이모저모"
 const DATA_DIR = path.resolve(
   __dirname,
-  "../data/정휘원의 Tech Blog/My Tech 이모저모"
+  "../resources/notion-data/정휘원의 Tech Blog/My Tech 이모저모"
 );
 const PUBLIC_IMG_DIR = path.resolve(__dirname, "../public/images/blog");
 const OUTPUT_FILE = path.resolve(__dirname, "../src/data/blog-posts.json");

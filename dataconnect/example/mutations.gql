@@ -1,0 +1,48 @@
+mutation CreateBlogPost(
+  $id: String!
+  $title: String!
+  $summary: String
+  $content: String
+  $category: String
+  $tags: [String!]
+  $isPublished: Boolean
+  $createdAt: String
+  $updatedAt: String
+) @auth(level: PUBLIC) {
+  blogPost_insert(
+    data: {
+      id: $id
+      title: $title
+      summary: $summary
+      content: $content
+      category: $category
+      tags: $tags
+      isPublished: $isPublished
+      createdAt: $createdAt
+      updatedAt: $updatedAt
+    }
+  )
+}
+
+mutation DeleteBlogPost($id: String!) @auth(level: PUBLIC) {
+  blogPost_delete(id: $id)
+}
+
+mutation UpdateBlogPost($id: String!, $content: String, $updatedAt: String)
+@auth(level: PUBLIC) {
+  blogPost_update(id: $id, data: { content: $content, updatedAt: $updatedAt })
+}
+
+query ListBlogPosts @auth(level: PUBLIC) {
+  blogPosts {
+    id
+    title
+    summary
+    content
+    category
+    tags
+    isPublished
+    createdAt
+    updatedAt
+  }
+}

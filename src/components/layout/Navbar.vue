@@ -16,7 +16,6 @@ import Button from '@/components/ui/Button.vue'
       </div>
 
       <div class="flex items-center gap-4">
-        <Button variant="ghost" size="sm" class="hidden sm:inline-flex">Sign In</Button>
         <Button variant="primary" size="sm">Contact Me</Button>
       </div>
     </div>

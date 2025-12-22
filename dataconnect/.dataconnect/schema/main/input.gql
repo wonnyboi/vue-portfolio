@@ -1,0 +1,305 @@
+"""
+✨ `BlogPost_KeyOutput` returns the primary key fields of table type `BlogPost`.
+
+It has the same format as `BlogPost_Key`, but is only used as mutation return value.
+"""
+scalar BlogPost_KeyOutput
+"""
+✨ Generated data input type for table 'BlogPost'. It includes all necessary fields for creating or upserting rows into table.
+"""
+input BlogPost_Data {
+  """
+  ✨ Generated from Field `BlogPost`.`id` of type `String!`
+  """
+  id: String
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `BlogPost`.`id` of type `String!`)
+  """
+  id_expr: String_Expr
+  """
+  ✨ Generated from Field `BlogPost`.`category` of type `String`
+  """
+  category: String
+  """
+  ✨ `_expr` server value variant of `category` (✨ Generated from Field `BlogPost`.`category` of type `String`)
+  """
+  category_expr: String_Expr
+  """
+  ✨ Generated from Field `BlogPost`.`content` of type `String`
+  """
+  content: String
+  """
+  ✨ `_expr` server value variant of `content` (✨ Generated from Field `BlogPost`.`content` of type `String`)
+  """
+  content_expr: String_Expr
+  """
+  ✨ Generated from Field `BlogPost`.`createdAt` of type `String`
+  """
+  createdAt: String
+  """
+  ✨ `_expr` server value variant of `createdAt` (✨ Generated from Field `BlogPost`.`createdAt` of type `String`)
+  """
+  createdAt_expr: String_Expr
+  """
+  ✨ Generated from Field `BlogPost`.`isPublished` of type `Boolean!`
+  """
+  isPublished: Boolean
+  """
+  ✨ `_expr` server value variant of `isPublished` (✨ Generated from Field `BlogPost`.`isPublished` of type `Boolean!`)
+  """
+  isPublished_expr: Boolean_Expr
+  """
+  ✨ Generated from Field `BlogPost`.`summary` of type `String`
+  """
+  summary: String
+  """
+  ✨ `_expr` server value variant of `summary` (✨ Generated from Field `BlogPost`.`summary` of type `String`)
+  """
+  summary_expr: String_Expr
+  """
+  ✨ Generated from Field `BlogPost`.`tags` of type `[String!]`
+  """
+  tags: [String!]
+  """
+  ✨ `_update` server value variant of `tags` (✨ Generated from Field `BlogPost`.`tags` of type `[String!]`)
+  """
+  tags_update: [String_ListUpdate!]
+  """
+  ✨ Generated from Field `BlogPost`.`title` of type `String!`
+  """
+  title: String
+  """
+  ✨ `_expr` server value variant of `title` (✨ Generated from Field `BlogPost`.`title` of type `String!`)
+  """
+  title_expr: String_Expr
+  """
+  ✨ Generated from Field `BlogPost`.`updatedAt` of type `String`
+  """
+  updatedAt: String
+  """
+  ✨ `_expr` server value variant of `updatedAt` (✨ Generated from Field `BlogPost`.`updatedAt` of type `String`)
+  """
+  updatedAt_expr: String_Expr
+}
+"""
+✨ Generated filter input type for table 'BlogPost'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input BlogPost_Filter {
+  """
+  Apply multiple filter conditions using `AND` logic.
+  """
+  _and: [BlogPost_Filter!]
+  """
+  Negate the result of the provided filter condition.
+  """
+  _not: BlogPost_Filter
+  """
+  Apply multiple filter conditions using `OR` logic.
+  """
+  _or: [BlogPost_Filter!]
+  """
+  ✨ Generated from Field `BlogPost`.`id` of type `String!`
+  """
+  id: String_Filter
+  """
+  ✨ Generated from Field `BlogPost`.`category` of type `String`
+  """
+  category: String_Filter
+  """
+  ✨ Generated from Field `BlogPost`.`content` of type `String`
+  """
+  content: String_Filter
+  """
+  ✨ Generated from Field `BlogPost`.`createdAt` of type `String`
+  """
+  createdAt: String_Filter
+  """
+  ✨ Generated from Field `BlogPost`.`isPublished` of type `Boolean!`
+  """
+  isPublished: Boolean_Filter
+  """
+  ✨ Generated from Field `BlogPost`.`summary` of type `String`
+  """
+  summary: String_Filter
+  """
+  ✨ Generated from Field `BlogPost`.`tags` of type `[String!]`
+  """
+  tags: String_ListFilter
+  """
+  ✨ Generated from Field `BlogPost`.`title` of type `String!`
+  """
+  title: String_Filter
+  """
+  ✨ Generated from Field `BlogPost`.`updatedAt` of type `String`
+  """
+  updatedAt: String_Filter
+}
+"""
+✨ Generated first-row input type for table 'BlogPost'. This input selects the first row matching the filter criteria, ordered according to the specified conditions.
+"""
+input BlogPost_FirstRow {
+  """
+  Order the result by the specified fields.
+  """
+  orderBy: [BlogPost_Order!]
+  """
+  Filters rows based on the specified conditions.
+  """
+  where: BlogPost_Filter
+}
+"""
+✨ Generated having input type for table 'BlogPost'. This input allows you to filter groups during aggregate queries using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input BlogPost_Having {
+  """
+  Apply multiple Having conditions using `AND` logic.
+  """
+  _and: [BlogPost_Having!]
+  """
+  Whether to apply DISTINCT to the aggregate function.
+  """
+  _distinct: Boolean
+  """
+  Negate the result of the provided Having condition.
+  """
+  _not: BlogPost_Having
+  """
+  Apply multiple Having conditions using `OR` logic.
+  """
+  _or: [BlogPost_Having!]
+  """
+  ✨ Generated from Field `BlogPost`.`_count` of type `Int!`
+  """
+  _count: Int_Filter
+  """
+  ✨ Generated from Field `BlogPost`.`category_count` of type `Int!`
+  """
+  category_count: Int_Filter
+  """
+  ✨ Generated from Field `BlogPost`.`content_count` of type `Int!`
+  """
+  content_count: Int_Filter
+  """
+  ✨ Generated from Field `BlogPost`.`createdAt_count` of type `Int!`
+  """
+  createdAt_count: Int_Filter
+  """
+  ✨ Generated from Field `BlogPost`.`id_count` of type `Int!`
+  """
+  id_count: Int_Filter
+  """
+  ✨ Generated from Field `BlogPost`.`isPublished_count` of type `Int!`
+  """
+  isPublished_count: Int_Filter
+  """
+  ✨ Generated from Field `BlogPost`.`summary_count` of type `Int!`
+  """
+  summary_count: Int_Filter
+  """
+  ✨ Generated from Field `BlogPost`.`title_count` of type `Int!`
+  """
+  title_count: Int_Filter
+  """
+  ✨ Generated from Field `BlogPost`.`updatedAt_count` of type `Int!`
+  """
+  updatedAt_count: Int_Filter
+}
+"""
+✨ Generated key input type for table 'BlogPost'. It represents the primary key fields used to uniquely identify a row in the table.
+"""
+input BlogPost_Key {
+  """
+  ✨ Generated from Field `BlogPost`.`id` of type `String!`
+  """
+  id: String
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `BlogPost`.`id` of type `String!`)
+  """
+  id_expr: String_Expr
+}
+"""
+✨ Generated list filter input type for table 'BlogPost'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
+"""
+input BlogPost_ListFilter {
+  """
+  The desired number of objects that match the condition (defaults to at least one).
+  """
+  count: Int_Filter = {gt:0}
+  """
+  Condition of the related objects to filter for.
+  """
+  exist: BlogPost_Filter
+}
+"""
+✨ Generated order input type for table 'BlogPost'. This input defines the sorting order of rows in query results based on one or more fields.
+"""
+input BlogPost_Order {
+  """
+  ✨ Generated from Field `BlogPost`.`id` of type `String!`
+  """
+  id: OrderDirection
+  """
+  ✨ Generated from Field `BlogPost`.`category` of type `String`
+  """
+  category: OrderDirection
+  """
+  ✨ Generated from Field `BlogPost`.`content` of type `String`
+  """
+  content: OrderDirection
+  """
+  ✨ Generated from Field `BlogPost`.`createdAt` of type `String`
+  """
+  createdAt: OrderDirection
+  """
+  ✨ Generated from Field `BlogPost`.`isPublished` of type `Boolean!`
+  """
+  isPublished: OrderDirection
+  """
+  ✨ Generated from Field `BlogPost`.`summary` of type `String`
+  """
+  summary: OrderDirection
+  """
+  ✨ Generated from Field `BlogPost`.`title` of type `String!`
+  """
+  title: OrderDirection
+  """
+  ✨ Generated from Field `BlogPost`.`updatedAt` of type `String`
+  """
+  updatedAt: OrderDirection
+  """
+  ✨ Generated from Field `BlogPost`.`_count` of type `Int!`
+  """
+  _count: OrderDirection
+  """
+  ✨ Generated from Field `BlogPost`.`category_count` of type `Int!`
+  """
+  category_count: OrderDirection
+  """
+  ✨ Generated from Field `BlogPost`.`content_count` of type `Int!`
+  """
+  content_count: OrderDirection
+  """
+  ✨ Generated from Field `BlogPost`.`createdAt_count` of type `Int!`
+  """
+  createdAt_count: OrderDirection
+  """
+  ✨ Generated from Field `BlogPost`.`id_count` of type `Int!`
+  """
+  id_count: OrderDirection
+  """
+  ✨ Generated from Field `BlogPost`.`isPublished_count` of type `Int!`
+  """
+  isPublished_count: OrderDirection
+  """
+  ✨ Generated from Field `BlogPost`.`summary_count` of type `Int!`
+  """
+  summary_count: OrderDirection
+  """
+  ✨ Generated from Field `BlogPost`.`title_count` of type `Int!`
+  """
+  title_count: OrderDirection
+  """
+  ✨ Generated from Field `BlogPost`.`updatedAt_count` of type `Int!`
+  """
+  updatedAt_count: OrderDirection
+}

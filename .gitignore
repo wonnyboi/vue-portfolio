@@ -25,3 +25,6 @@ dist-ssr
 
 # Raw Data
 data/
+.env
+resources/
+public/images/blog/

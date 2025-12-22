@@ -1,0 +1,124 @@
+extend type Mutation {
+  """
+  ✨ Insert a single `BlogPost` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  blogPost_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: BlogPost_Data!
+  ): BlogPost_KeyOutput! @fdc_generated(from: "BlogPost", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert `BlogPost` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  blogPost_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [BlogPost_Data!]!
+  ): [BlogPost_KeyOutput!]! @fdc_generated(from: "BlogPost", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert or update a single `BlogPost` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `BlogPost`.
+  """
+  blogPost_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: BlogPost_Data!
+  ): BlogPost_KeyOutput! @fdc_generated(from: "BlogPost", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update `BlogPost` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `BlogPost`.
+  """
+  blogPost_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [BlogPost_Data!]!
+  ): [BlogPost_KeyOutput!]! @fdc_generated(from: "BlogPost", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Update a single `BlogPost` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `BlogPost` or `null` if not found.
+  """
+  blogPost_update(
+    """
+    The unique ID of the object.
+    """
+    id: String
+
+    """
+    ✨ `_expr` server value variant of `id` (The unique ID of the object.)
+    """
+    id_expr: String_Expr
+
+    """
+    The key used to identify the object.
+    """
+    key: BlogPost_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: BlogPost_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: BlogPost_Data!
+  ): BlogPost_KeyOutput @fdc_generated(from: "BlogPost", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update `BlogPost` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  blogPost_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: BlogPost_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: BlogPost_Data!
+  ): Int! @fdc_generated(from: "BlogPost", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Delete a single `BlogPost` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  blogPost_delete(
+    """
+    The unique ID of the object.
+    """
+    id: String
+
+    """
+    ✨ `_expr` server value variant of `id` (The unique ID of the object.)
+    """
+    id_expr: String_Expr
+
+    """
+    The key used to identify the object.
+    """
+    key: BlogPost_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: BlogPost_FirstRow
+  ): BlogPost_KeyOutput @fdc_generated(from: "BlogPost", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete `BlogPost` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  blogPost_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: BlogPost_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "BlogPost", purpose: DELETE_MULTIPLE)
+}

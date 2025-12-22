@@ -1,0 +1,86 @@
+extend type BlogPost {
+  """
+  Implicit metadata field that cannot be written. It provides extra information about query results.
+  """
+  _metadata: _Metadata @fdc_generated(from: "BlogPost", purpose: METADATA_FIELD)
+  """
+  ✨ Count the number of rows in the `BlogPost` table.
+  """
+  _count: Int! @fdc_generated(from: "BlogPost.", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `BlogPost` table where the `category` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  category_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "BlogPost.category", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `BlogPost` table where the `content` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  content_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "BlogPost.content", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `BlogPost` table where the `createdAt` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  createdAt_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "BlogPost.createdAt", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `BlogPost` table where the `id` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  id_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "BlogPost.id", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `BlogPost` table where the `isPublished` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  isPublished_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "BlogPost.isPublished", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `BlogPost` table where the `summary` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  summary_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "BlogPost.summary", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `BlogPost` table where the `title` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  title_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "BlogPost.title", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `BlogPost` table where the `updatedAt` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  updatedAt_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "BlogPost.updatedAt", purpose: QUERY_COUNT)
+  """
+  A generated field that is used for caching results in SDKs.
+  """
+  _id: ID! @fdc_generated(from: "BlogPost.id", purpose: GLOBAL_ID)
+}

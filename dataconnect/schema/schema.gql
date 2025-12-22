@@ -1,0 +1,11 @@
+type BlogPost @table {
+  id: String!
+  title: String!
+  summary: String
+  content: String
+  category: String
+  tags: [String!]
+  isPublished: Boolean! @default(value: true)
+  createdAt: String
+  updatedAt: String
+}

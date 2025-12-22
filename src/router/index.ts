@@ -27,7 +27,7 @@ const routes: RouteRecordRaw[] = [
     component: () => import('@/views/ArticleView.vue')
   },
   {
-    path: '/login',
+    path: '/admin/login',
     name: 'Login',
     component: () => import('@/views/admin/LoginView.vue')
   },
@@ -42,9 +42,19 @@ const routes: RouteRecordRaw[] = [
         component: () => import('@/views/ProjectsView.vue') // Reusing for MVP or create dedicated
       },
       {
-         path: 'blog',
-         name: 'AdminBlog',
-         component: () => import('@/views/BlogView.vue') // Reusing for MVP
+        path: 'blog',
+        name: 'AdminBlog',
+        component: () => import('@/views/admin/AdminBlogView.vue')
+      },
+      {
+        path: 'blog/new',
+        name: 'AdminBlogNew',
+        component: () => import('@/views/admin/BlogPostEditor.vue')
+      },
+      {
+        path: 'blog/edit/:id',
+        name: 'AdminBlogEdit',
+        component: () => import('@/views/admin/BlogPostEditor.vue')
       }
     ]
   }
@@ -73,7 +83,7 @@ router.beforeEach(async (to, _from, next) => {
     if (user) {
       next()
     } else {
-      next('/login')
+      next('/admin/login')
     }
   } else {
     next()

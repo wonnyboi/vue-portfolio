@@ -1,0 +1,6 @@
+connectorId: "portfolio"
+generate:
+  javascriptSdk:
+    outputDir: "../../src/dataconnect/portfolio"
+    package: "@dataconnect/portfolio"
+    packageJsonDir: "../../"
