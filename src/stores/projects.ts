@@ -47,7 +47,7 @@ export const useProjectStore = defineStore('projects', () => {
   }
 
   // Placeholder for future actions
-  async function addProject(project: Omit<Project, 'id' | 'createdAt' | 'updatedAt'>) {
+  async function addProject(_project: Omit<Project, 'id' | 'createdAt' | 'updatedAt'>) {
       // TODO: Implement with createProject mutation when needed
       console.warn('addProject not implemented yet');
   }
