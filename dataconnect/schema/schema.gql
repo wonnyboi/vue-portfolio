@@ -9,3 +9,19 @@ type BlogPost @table {
   createdAt: String
   updatedAt: String
 }
+
+type Project @table {
+  id: String!
+  title: String!
+  summary: String
+  description: String
+  techStack: [String!]
+  role: [String!]
+  periodStart: String
+  periodEnd: String
+  images: [String!]
+  tags: [String!]
+  isPublished: Boolean! @default(value: true)
+  createdAt: String
+  updatedAt: String
+}

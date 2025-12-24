@@ -1,4 +1,4 @@
-import { listBlogPosts, updateBlogPost, connectorConfig } from '../src/dataconnect-generated/esm/index.esm.js';
+import { listBlogPosts, updateBlogPost, connectorConfig } from '../src/dataconnect-generated';
 import { getDataConnect } from 'firebase/data-connect';
 import { initializeApp } from 'firebase/app';
 import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';

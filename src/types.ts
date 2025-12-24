@@ -4,7 +4,7 @@ export interface Project {
   summary: string
   description: string
   techStack: string[]
-  role: string
+  role: string[]
   period: {
     start: Date | string
     end: Date | string | null // null means 'Present'

@@ -1,8 +1,9 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
 import type { Project } from '@/types'
-// import { collection, getDocs, query, orderBy } from 'firebase/firestore'
-// import { db } from '@/firebase'
+import { getDataConnect } from 'firebase/data-connect'
+import { auth } from '@/firebase'
+import { listProjects, connectorConfig } from '@/dataconnect-generated'
 
 export const useProjectStore = defineStore('projects', () => {
   const projects = ref<Project[]>([])
@@ -10,57 +11,46 @@ export const useProjectStore = defineStore('projects', () => {
   const error = ref<string | null>(null)
 
   const publishedProjects = computed(() => projects.value.filter(p => p.isPublished))
+  
+  // Use auth.app - assuming Firebase App is initialized
+  const dc = getDataConnect(auth.app, connectorConfig as any)
 
   async function fetchProjects() {
     loading.value = true
     error.value = null
     try {
-      // In real app, remove the mock data fallback when Firebase is connected
-      // const q = query(collection(db, 'projects'), orderBy('createdAt', 'desc'))
-      // const snapshot = await getDocs(q)
-      // projects.value = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() } as Project))
-      
-      // MOCK DATA for Development
-      if (projects.value.length === 0) {
-          projects.value = [
-              {
-                  id: '1',
-                  title: 'Vision AI Traffic Monitor',
-                  summary: 'Real-time traffic analysis using YOLOv8 and Python.',
-                  description: 'A comprehensive system for monitoring traffic flow...',
-                  techStack: ['Python', 'OpenCV', 'YOLO'],
-                  role: 'Lead AI Engineer',
-                  period: { start: new Date('2023-01-01'), end: new Date('2023-06-01') },
-                  images: [],
-                  tags: ['Vision AI', 'Python'],
-                  isPublished: true,
-                  createdAt: new Date(),
-                  updatedAt: new Date()
-              },
-              {
-                  id: '2',
-                  title: 'Flutter E-Commerce App',
-                  summary: 'Cross-platform mobile app with complex animations.',
-                  description: 'Built a high-performance shopping app...',
-                  techStack: ['Flutter', 'Dart', 'Firebase'],
-                  role: 'Sole Developer',
-                  period: { start: new Date('2023-07-01'), end: null },
-                  images: [],
-                  tags: ['Flutter', 'Mobile'],
-                  isPublished: true,
-                  createdAt: new Date(),
-                  updatedAt: new Date()
-              }
-          ]
-      }
-      
+      const response = await listProjects(dc);
+      // Map SDK response to Project type
+      projects.value = response.data.projects.map((p: any) => ({
+        id: p.id,
+        title: p.title,
+        summary: p.summary,
+        description: p.description,
+        techStack: p.techStack,
+        role: p.role,
+        period: {
+           start: p.periodStart || new Date().toISOString(),
+           end: p.periodEnd
+        },
+        images: p.images,
+        tags: p.tags,
+        isPublished: p.isPublished,
+        createdAt: p.createdAt,
+        updatedAt: p.updatedAt
+      })) as Project[];
     } catch (e: any) {
-      console.error('Error fetching projects:', e)
+      console.error('Failed to fetch projects:', e)
       error.value = e.message
     } finally {
       loading.value = false
     }
   }
 
-  return { projects, publishedProjects, loading, error, fetchProjects }
+  // Placeholder for future actions
+  async function addProject(project: Omit<Project, 'id' | 'createdAt' | 'updatedAt'>) {
+      // TODO: Implement with createProject mutation when needed
+      console.warn('addProject not implemented yet');
+  }
+
+  return { projects, loading, error, publishedProjects, fetchProjects, addProject }
 })

@@ -28,6 +28,94 @@ mutation DeleteBlogPost($id: String!) @auth(level: PUBLIC) {
   blogPost_delete(id: $id)
 }
 
+mutation CreateProject(
+  $id: String!
+  $title: String!
+  $summary: String
+  $description: String
+  $techStack: [String!]
+  $role: [String!]
+  $periodStart: String
+  $periodEnd: String
+  $images: [String!]
+  $tags: [String!]
+  $isPublished: Boolean
+  $createdAt: String
+  $updatedAt: String
+) @auth(level: PUBLIC) {
+  project_insert(
+    data: {
+      id: $id
+      title: $title
+      summary: $summary
+      description: $description
+      techStack: $techStack
+      role: $role
+      periodStart: $periodStart
+      periodEnd: $periodEnd
+      images: $images
+      tags: $tags
+      isPublished: $isPublished
+      createdAt: $createdAt
+      updatedAt: $updatedAt
+    }
+  )
+}
+
+mutation UpdateProject(
+  $id: String!
+  $title: String
+  $summary: String
+  $description: String
+  $techStack: [String!]
+  $role: [String!]
+  $periodStart: String
+  $periodEnd: String
+  $images: [String!]
+  $tags: [String!]
+  $isPublished: Boolean
+  $updatedAt: String
+) @auth(level: PUBLIC) {
+  project_update(
+    id: $id
+    data: {
+      title: $title
+      summary: $summary
+      description: $description
+      techStack: $techStack
+      role: $role
+      periodStart: $periodStart
+      periodEnd: $periodEnd
+      images: $images
+      tags: $tags
+      isPublished: $isPublished
+      updatedAt: $updatedAt
+    }
+  )
+}
+
+mutation DeleteProject($id: String!) @auth(level: PUBLIC) {
+  project_delete(id: $id)
+}
+
+query ListProjects @auth(level: PUBLIC) {
+  projects {
+    id
+    title
+    summary
+    description
+    techStack
+    role
+    periodStart
+    periodEnd
+    images
+    tags
+    isPublished
+    createdAt
+    updatedAt
+  }
+}
+
 mutation UpdateBlogPost($id: String!, $content: String, $updatedAt: String)
 @auth(level: PUBLIC) {
   blogPost_update(id: $id, data: { content: $content, updatedAt: $updatedAt })

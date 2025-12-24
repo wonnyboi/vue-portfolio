@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.18",
+    "dataconnect-generated": "link:C:/Users/IBAN-3/AppData/Local/pnpm/global/5/node_modules/src/dataconnect-generated",
     "firebase": "^12.7.0",
     "pinia": "^3.0.4",
     "vue": "^3.5.24",

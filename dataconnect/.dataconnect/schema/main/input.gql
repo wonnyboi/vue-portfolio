@@ -5,6 +5,12 @@ It has the same format as `BlogPost_Key`, but is only used as mutation return va
 """
 scalar BlogPost_KeyOutput
 """
+✨ `Project_KeyOutput` returns the primary key fields of table type `Project`.
+
+It has the same format as `Project_Key`, but is only used as mutation return value.
+"""
+scalar Project_KeyOutput
+"""
 ✨ Generated data input type for table 'BlogPost'. It includes all necessary fields for creating or upserting rows into table.
 """
 input BlogPost_Data {
@@ -300,6 +306,365 @@ input BlogPost_Order {
   title_count: OrderDirection
   """
   ✨ Generated from Field `BlogPost`.`updatedAt_count` of type `Int!`
+  """
+  updatedAt_count: OrderDirection
+}
+"""
+✨ Generated data input type for table 'Project'. It includes all necessary fields for creating or upserting rows into table.
+"""
+input Project_Data {
+  """
+  ✨ Generated from Field `Project`.`id` of type `String!`
+  """
+  id: String
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `Project`.`id` of type `String!`)
+  """
+  id_expr: String_Expr
+  """
+  ✨ Generated from Field `Project`.`createdAt` of type `String`
+  """
+  createdAt: String
+  """
+  ✨ `_expr` server value variant of `createdAt` (✨ Generated from Field `Project`.`createdAt` of type `String`)
+  """
+  createdAt_expr: String_Expr
+  """
+  ✨ Generated from Field `Project`.`description` of type `String`
+  """
+  description: String
+  """
+  ✨ `_expr` server value variant of `description` (✨ Generated from Field `Project`.`description` of type `String`)
+  """
+  description_expr: String_Expr
+  """
+  ✨ Generated from Field `Project`.`images` of type `[String!]`
+  """
+  images: [String!]
+  """
+  ✨ `_update` server value variant of `images` (✨ Generated from Field `Project`.`images` of type `[String!]`)
+  """
+  images_update: [String_ListUpdate!]
+  """
+  ✨ Generated from Field `Project`.`isPublished` of type `Boolean!`
+  """
+  isPublished: Boolean
+  """
+  ✨ `_expr` server value variant of `isPublished` (✨ Generated from Field `Project`.`isPublished` of type `Boolean!`)
+  """
+  isPublished_expr: Boolean_Expr
+  """
+  ✨ Generated from Field `Project`.`periodEnd` of type `String`
+  """
+  periodEnd: String
+  """
+  ✨ `_expr` server value variant of `periodEnd` (✨ Generated from Field `Project`.`periodEnd` of type `String`)
+  """
+  periodEnd_expr: String_Expr
+  """
+  ✨ Generated from Field `Project`.`periodStart` of type `String`
+  """
+  periodStart: String
+  """
+  ✨ `_expr` server value variant of `periodStart` (✨ Generated from Field `Project`.`periodStart` of type `String`)
+  """
+  periodStart_expr: String_Expr
+  """
+  ✨ Generated from Field `Project`.`role` of type `[String!]`
+  """
+  role: [String!]
+  """
+  ✨ `_update` server value variant of `role` (✨ Generated from Field `Project`.`role` of type `[String!]`)
+  """
+  role_update: [String_ListUpdate!]
+  """
+  ✨ Generated from Field `Project`.`summary` of type `String`
+  """
+  summary: String
+  """
+  ✨ `_expr` server value variant of `summary` (✨ Generated from Field `Project`.`summary` of type `String`)
+  """
+  summary_expr: String_Expr
+  """
+  ✨ Generated from Field `Project`.`tags` of type `[String!]`
+  """
+  tags: [String!]
+  """
+  ✨ `_update` server value variant of `tags` (✨ Generated from Field `Project`.`tags` of type `[String!]`)
+  """
+  tags_update: [String_ListUpdate!]
+  """
+  ✨ Generated from Field `Project`.`techStack` of type `[String!]`
+  """
+  techStack: [String!]
+  """
+  ✨ `_update` server value variant of `techStack` (✨ Generated from Field `Project`.`techStack` of type `[String!]`)
+  """
+  techStack_update: [String_ListUpdate!]
+  """
+  ✨ Generated from Field `Project`.`title` of type `String!`
+  """
+  title: String
+  """
+  ✨ `_expr` server value variant of `title` (✨ Generated from Field `Project`.`title` of type `String!`)
+  """
+  title_expr: String_Expr
+  """
+  ✨ Generated from Field `Project`.`updatedAt` of type `String`
+  """
+  updatedAt: String
+  """
+  ✨ `_expr` server value variant of `updatedAt` (✨ Generated from Field `Project`.`updatedAt` of type `String`)
+  """
+  updatedAt_expr: String_Expr
+}
+"""
+✨ Generated filter input type for table 'Project'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input Project_Filter {
+  """
+  Apply multiple filter conditions using `AND` logic.
+  """
+  _and: [Project_Filter!]
+  """
+  Negate the result of the provided filter condition.
+  """
+  _not: Project_Filter
+  """
+  Apply multiple filter conditions using `OR` logic.
+  """
+  _or: [Project_Filter!]
+  """
+  ✨ Generated from Field `Project`.`id` of type `String!`
+  """
+  id: String_Filter
+  """
+  ✨ Generated from Field `Project`.`createdAt` of type `String`
+  """
+  createdAt: String_Filter
+  """
+  ✨ Generated from Field `Project`.`description` of type `String`
+  """
+  description: String_Filter
+  """
+  ✨ Generated from Field `Project`.`images` of type `[String!]`
+  """
+  images: String_ListFilter
+  """
+  ✨ Generated from Field `Project`.`isPublished` of type `Boolean!`
+  """
+  isPublished: Boolean_Filter
+  """
+  ✨ Generated from Field `Project`.`periodEnd` of type `String`
+  """
+  periodEnd: String_Filter
+  """
+  ✨ Generated from Field `Project`.`periodStart` of type `String`
+  """
+  periodStart: String_Filter
+  """
+  ✨ Generated from Field `Project`.`role` of type `[String!]`
+  """
+  role: String_ListFilter
+  """
+  ✨ Generated from Field `Project`.`summary` of type `String`
+  """
+  summary: String_Filter
+  """
+  ✨ Generated from Field `Project`.`tags` of type `[String!]`
+  """
+  tags: String_ListFilter
+  """
+  ✨ Generated from Field `Project`.`techStack` of type `[String!]`
+  """
+  techStack: String_ListFilter
+  """
+  ✨ Generated from Field `Project`.`title` of type `String!`
+  """
+  title: String_Filter
+  """
+  ✨ Generated from Field `Project`.`updatedAt` of type `String`
+  """
+  updatedAt: String_Filter
+}
+"""
+✨ Generated first-row input type for table 'Project'. This input selects the first row matching the filter criteria, ordered according to the specified conditions.
+"""
+input Project_FirstRow {
+  """
+  Order the result by the specified fields.
+  """
+  orderBy: [Project_Order!]
+  """
+  Filters rows based on the specified conditions.
+  """
+  where: Project_Filter
+}
+"""
+✨ Generated having input type for table 'Project'. This input allows you to filter groups during aggregate queries using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input Project_Having {
+  """
+  Apply multiple Having conditions using `AND` logic.
+  """
+  _and: [Project_Having!]
+  """
+  Whether to apply DISTINCT to the aggregate function.
+  """
+  _distinct: Boolean
+  """
+  Negate the result of the provided Having condition.
+  """
+  _not: Project_Having
+  """
+  Apply multiple Having conditions using `OR` logic.
+  """
+  _or: [Project_Having!]
+  """
+  ✨ Generated from Field `Project`.`_count` of type `Int!`
+  """
+  _count: Int_Filter
+  """
+  ✨ Generated from Field `Project`.`createdAt_count` of type `Int!`
+  """
+  createdAt_count: Int_Filter
+  """
+  ✨ Generated from Field `Project`.`description_count` of type `Int!`
+  """
+  description_count: Int_Filter
+  """
+  ✨ Generated from Field `Project`.`id_count` of type `Int!`
+  """
+  id_count: Int_Filter
+  """
+  ✨ Generated from Field `Project`.`isPublished_count` of type `Int!`
+  """
+  isPublished_count: Int_Filter
+  """
+  ✨ Generated from Field `Project`.`periodEnd_count` of type `Int!`
+  """
+  periodEnd_count: Int_Filter
+  """
+  ✨ Generated from Field `Project`.`periodStart_count` of type `Int!`
+  """
+  periodStart_count: Int_Filter
+  """
+  ✨ Generated from Field `Project`.`summary_count` of type `Int!`
+  """
+  summary_count: Int_Filter
+  """
+  ✨ Generated from Field `Project`.`title_count` of type `Int!`
+  """
+  title_count: Int_Filter
+  """
+  ✨ Generated from Field `Project`.`updatedAt_count` of type `Int!`
+  """
+  updatedAt_count: Int_Filter
+}
+"""
+✨ Generated key input type for table 'Project'. It represents the primary key fields used to uniquely identify a row in the table.
+"""
+input Project_Key {
+  """
+  ✨ Generated from Field `Project`.`id` of type `String!`
+  """
+  id: String
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `Project`.`id` of type `String!`)
+  """
+  id_expr: String_Expr
+}
+"""
+✨ Generated list filter input type for table 'Project'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
+"""
+input Project_ListFilter {
+  """
+  The desired number of objects that match the condition (defaults to at least one).
+  """
+  count: Int_Filter = {gt:0}
+  """
+  Condition of the related objects to filter for.
+  """
+  exist: Project_Filter
+}
+"""
+✨ Generated order input type for table 'Project'. This input defines the sorting order of rows in query results based on one or more fields.
+"""
+input Project_Order {
+  """
+  ✨ Generated from Field `Project`.`id` of type `String!`
+  """
+  id: OrderDirection
+  """
+  ✨ Generated from Field `Project`.`createdAt` of type `String`
+  """
+  createdAt: OrderDirection
+  """
+  ✨ Generated from Field `Project`.`description` of type `String`
+  """
+  description: OrderDirection
+  """
+  ✨ Generated from Field `Project`.`isPublished` of type `Boolean!`
+  """
+  isPublished: OrderDirection
+  """
+  ✨ Generated from Field `Project`.`periodEnd` of type `String`
+  """
+  periodEnd: OrderDirection
+  """
+  ✨ Generated from Field `Project`.`periodStart` of type `String`
+  """
+  periodStart: OrderDirection
+  """
+  ✨ Generated from Field `Project`.`summary` of type `String`
+  """
+  summary: OrderDirection
+  """
+  ✨ Generated from Field `Project`.`title` of type `String!`
+  """
+  title: OrderDirection
+  """
+  ✨ Generated from Field `Project`.`updatedAt` of type `String`
+  """
+  updatedAt: OrderDirection
+  """
+  ✨ Generated from Field `Project`.`_count` of type `Int!`
+  """
+  _count: OrderDirection
+  """
+  ✨ Generated from Field `Project`.`createdAt_count` of type `Int!`
+  """
+  createdAt_count: OrderDirection
+  """
+  ✨ Generated from Field `Project`.`description_count` of type `Int!`
+  """
+  description_count: OrderDirection
+  """
+  ✨ Generated from Field `Project`.`id_count` of type `Int!`
+  """
+  id_count: OrderDirection
+  """
+  ✨ Generated from Field `Project`.`isPublished_count` of type `Int!`
+  """
+  isPublished_count: OrderDirection
+  """
+  ✨ Generated from Field `Project`.`periodEnd_count` of type `Int!`
+  """
+  periodEnd_count: OrderDirection
+  """
+  ✨ Generated from Field `Project`.`periodStart_count` of type `Int!`
+  """
+  periodStart_count: OrderDirection
+  """
+  ✨ Generated from Field `Project`.`summary_count` of type `Int!`
+  """
+  summary_count: OrderDirection
+  """
+  ✨ Generated from Field `Project`.`title_count` of type `Int!`
+  """
+  title_count: OrderDirection
+  """
+  ✨ Generated from Field `Project`.`updatedAt_count` of type `Int!`
   """
   updatedAt_count: OrderDirection
 }

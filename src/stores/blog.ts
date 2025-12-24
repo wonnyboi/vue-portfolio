@@ -9,7 +9,7 @@ import {
   updateBlogPost, 
   deleteBlogPost, 
   connectorConfig 
-} from '@/dataconnect-generated/esm/index.esm.js'
+} from '@/dataconnect-generated'
 
 export const useBlogStore = defineStore('blog', () => {
   const posts = ref<BlogPost[]>([])
