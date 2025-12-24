@@ -10,13 +10,13 @@ import Button from '@/components/ui/Button.vue'
       </router-link>
       
       <div class="hidden md:flex items-center gap-8">
-        <router-link to="/projects" class="text-gray-300 hover:text-white transition-colors">Projects</router-link>
-        <router-link to="/blog" class="text-gray-300 hover:text-white transition-colors">Blog</router-link>
-        <router-link to="/about" class="text-gray-300 hover:text-white transition-colors">About</router-link>
+        <router-link to="/projects" class="text-gray-300 hover:text-white transition-colors">프로젝트</router-link>
+        <router-link to="/blog" class="text-gray-300 hover:text-white transition-colors">블로그</router-link>
+        <router-link to="/about" class="text-gray-300 hover:text-white transition-colors">소개</router-link>
       </div>
 
       <div class="flex items-center gap-4">
-        <Button variant="primary" size="sm">Contact Me</Button>
+        <Button variant="primary" size="sm">문의하기</Button>
       </div>
     </div>
   </nav>

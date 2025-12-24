@@ -29,7 +29,7 @@ const formatDate = (date: Date | string) => {
   <div class="pt-24 min-h-screen container mx-auto px-4 pb-20" v-if="post">
     <div class="max-w-4xl mx-auto">
       <Button variant="ghost" @click="router.back()" class="mb-8">
-        ← Back to Blog
+        ← 블로그로 돌아가기
       </Button>
 
       <div class="flex items-center gap-3 text-sm text-gray-400 mb-4">
@@ -54,8 +54,8 @@ const formatDate = (date: Date | string) => {
     </div>
   </div>
   <div v-else class="pt-32 text-center text-gray-500">
-    <div v-if="store.loading">Loading article...</div>
-    <div v-else>Article not found.</div>
+    <div v-if="store.loading">글 불러오는 중...</div>
+    <div v-else>글을 찾을 수 없습니다.</div>
   </div>
 </template>
 

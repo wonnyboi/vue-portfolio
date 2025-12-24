@@ -29,12 +29,13 @@ const navigateToDetail = (id: string) => {
 }
 </script>
 
+
 <template>
   <div class="pt-24 min-h-screen container mx-auto px-4">
     <div class="mb-12 text-center">
-      <h1 class="text-4xl font-bold text-white mb-4">Projects</h1>
+      <h1 class="text-4xl font-bold text-white mb-4">프로젝트</h1>
       <p class="text-gray-400 max-w-2xl mx-auto">
-        A collection of my work in Vision AI, Web Development, and Mobile Apps.
+        Vision AI, 웹 개발, 모바일 앱 등 다양한 분야의 작업물입니다.
       </p>
     </div>
 
@@ -46,7 +47,7 @@ const navigateToDetail = (id: string) => {
         :class="{ 'bg-white/10 text-white': activeTag === null }"
         @click="activeTag = null"
       >
-        All
+        전체
       </Button>
       <Button 
         v-for="tag in allTags" 
@@ -62,7 +63,7 @@ const navigateToDetail = (id: string) => {
 
     <!-- Loading State -->
     <div v-if="store.loading" class="text-center py-20 text-gray-500">
-      Loading projects...
+      프로젝트 불러오는 중...
     </div>
 
     <!-- Error State -->
@@ -82,7 +83,7 @@ const navigateToDetail = (id: string) => {
           <!-- Image Placeholder -->
           <img v-if="project.images.length > 0" :src="project.images[0]" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
           <div v-else class="w-full h-full bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center text-gray-600">
-            No Image
+            이미지 없음
           </div>
           
           <div class="absolute top-2 right-2 flex gap-1">

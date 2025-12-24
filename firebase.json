@@ -9,6 +9,7 @@
     "rules": "storage.rules"
   },
   "hosting": {
+    "site": "wonnyboi-vue",
     "public": "dist",
     "ignore": [
       "firebase.json",

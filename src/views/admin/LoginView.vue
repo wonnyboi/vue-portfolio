@@ -20,11 +20,11 @@ const handleLogin = async () => {
 <template>
   <div class="min-h-screen flex items-center justify-center bg-primary px-4">
     <div class="w-full max-w-md bg-white/5 border border-white/10 rounded-xl p-8 backdrop-blur-md">
-      <h1 class="text-2xl font-bold text-white mb-6 text-center">Admin Access</h1>
+      <h1 class="text-2xl font-bold text-white mb-6 text-center">관리자 접속</h1>
       
       <form @submit.prevent="handleLogin" class="space-y-4">
         <div>
-          <label class="block text-sm font-medium text-gray-400 mb-1">Email</label>
+          <label class="block text-sm font-medium text-gray-400 mb-1">이메일</label>
           <input 
             v-model="email" 
             type="email" 
@@ -34,7 +34,7 @@ const handleLogin = async () => {
         </div>
         
         <div>
-          <label class="block text-sm font-medium text-gray-400 mb-1">Password</label>
+          <label class="block text-sm font-medium text-gray-400 mb-1">비밀번호</label>
           <input 
             v-model="password" 
             type="password" 
@@ -48,7 +48,7 @@ const handleLogin = async () => {
         </div>
 
         <Button :disabled="authStore.loading" block variant="primary">
-          {{ authStore.loading ? 'Signing In...' : 'Sign In' }}
+          {{ authStore.loading ? '로그인 중...' : '로그인' }}
         </Button>
       </form>
     </div>

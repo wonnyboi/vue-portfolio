@@ -31,8 +31,8 @@ const formatDate = (date: Date | string) => {
 <template>
   <div class="pt-24 min-h-screen container mx-auto px-4">
     <div class="mb-12 text-center">
-      <h1 class="text-4xl font-bold text-white mb-4">Technical Blog</h1>
-      <p class="text-gray-400">Insights, tutorials, and experiments.</p>
+      <h1 class="text-4xl font-bold text-white mb-4">기술 블로그</h1>
+      <p class="text-gray-400">인사이트, 튜토리얼, 그리고 학습 기록들.</p>
     </div>
 
     <!-- Category Filter -->
@@ -42,7 +42,7 @@ const formatDate = (date: Date | string) => {
         :class="activeCategory === null ? 'bg-white text-primary font-bold' : 'bg-white/10 text-gray-300 hover:bg-white/20'"
         @click="activeCategory = null"
       >
-        All
+        전체
       </button>
       <button 
         v-for="cat in categories" 
@@ -56,7 +56,7 @@ const formatDate = (date: Date | string) => {
     </div>
 
     <div v-if="store.loading" class="text-center py-20 text-gray-500">
-      Loading posts...
+      글 불러오는 중...
     </div>
 
     <div v-else class="grid gap-6 max-w-4xl mx-auto">
