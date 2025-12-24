@@ -4,9 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-overrides:
-  dataconnect-generated: link:C:/Users/IBAN-3/AppData/Local/pnpm/global/5/node_modules/src/dataconnect-generated
-
 importers:
 
   .:
@@ -14,9 +11,6 @@ importers:
       '@tailwindcss/vite':
         specifier: ^4.1.18
         version: 4.1.18(vite@7.3.0(@types/node@24.10.4)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.21.0))
-      dataconnect-generated:
-        specifier: link:C:/Users/IBAN-3/AppData/Local/pnpm/global/5/node_modules/src/dataconnect-generated
-        version: link:C:/Users/IBAN-3/AppData/Local/pnpm/global/5/node_modules/src/dataconnect-generated
       firebase:
         specifier: ^12.7.0
         version: 12.7.0
