@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { computed, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
-import { useProjectStore } from '@/stores/projects'
-import Button from '@/components/ui/Button.vue'
+import { useProjectStore } from '@/modules/projects/stores/projects'
+import Button from '@/core/components/ui/Button.vue'
 
 const route = useRoute()
 const store = useProjectStore()

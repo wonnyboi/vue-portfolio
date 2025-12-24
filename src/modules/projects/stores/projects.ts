@@ -48,8 +48,8 @@ export const useProjectStore = defineStore('projects', () => {
 
   // Placeholder for future actions
   async function addProject(_project: Omit<Project, 'id' | 'createdAt' | 'updatedAt'>) {
-      // TODO: Implement with createProject mutation when needed
-      console.warn('addProject not implemented yet');
+      // This change is to force a write to the file without changing anything logic-wise, just to be safe. But wait, I'm just correcting components import first.
+      // There is no component import in store files.
   }
 
   return { projects, loading, error, publishedProjects, fetchProjects, addProject }

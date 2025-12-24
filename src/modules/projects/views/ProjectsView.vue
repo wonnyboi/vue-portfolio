@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { onMounted, ref, computed } from 'vue'
-import { useProjectStore } from '@/stores/projects'
-import Card from '@/components/ui/Card.vue'
-import Button from '@/components/ui/Button.vue'
+import { useProjectStore } from '@/modules/projects/stores/projects'
+import Card from '@/core/components/ui/Card.vue'
+import Button from '@/core/components/ui/Button.vue'
 import { useRouter } from 'vue-router'
 
 const store = useProjectStore()

@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-import { useAuthStore } from '@/stores/auth'
-import Button from '@/components/ui/Button.vue'
+import { useAuthStore } from '@/modules/auth/stores/auth'
+import Button from '@/core/components/ui/Button.vue'
 
 const email = ref('')
 const password = ref('')

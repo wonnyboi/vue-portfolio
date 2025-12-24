@@ -4,57 +4,57 @@ const routes: RouteRecordRaw[] = [
   { 
     path: '/', 
     name: 'Home', 
-    component: () => import('@/views/HomeView.vue') 
+    component: () => import('@/modules/home/views/HomeView.vue') 
   },
   { 
     path: '/projects', 
     name: 'Projects', 
-    component: () => import('@/views/ProjectsView.vue') 
+    component: () => import('@/modules/projects/views/ProjectsView.vue') 
   },
   {
     path: '/projects/:id',
     name: 'ProjectDetail',
-    component: () => import('@/views/ProjectDetailView.vue')
+    component: () => import('@/modules/projects/views/ProjectDetailView.vue')
   },
   { 
     path: '/blog', 
     name: 'Blog', 
-    component: () => import('@/views/BlogView.vue') 
+    component: () => import('@/modules/blog/views/BlogView.vue') 
   },
   {
     path: '/blog/:id',
     name: 'Article',
-    component: () => import('@/views/ArticleView.vue')
+    component: () => import('@/modules/blog/views/ArticleView.vue')
   },
   {
     path: '/admin/login',
     name: 'Login',
-    component: () => import('@/views/admin/LoginView.vue')
+    component: () => import('@/modules/auth/views/LoginView.vue')
   },
   {
     path: '/admin',
-    component: () => import('@/views/admin/AdminLayout.vue'),
+    component: () => import('@/modules/admin/views/AdminLayout.vue'),
     meta: { requiresAuth: true },
     children: [
       {
         path: 'projects',
         name: 'AdminProjects',
-        component: () => import('@/views/ProjectsView.vue') // Reusing for MVP or create dedicated
+        component: () => import('@/modules/projects/views/ProjectsView.vue') // Reusing for MVP or create dedicated
       },
       {
         path: 'blog',
         name: 'AdminBlog',
-        component: () => import('@/views/admin/AdminBlogView.vue')
+        component: () => import('@/modules/admin/views/AdminBlogView.vue')
       },
       {
         path: 'blog/new',
         name: 'AdminBlogNew',
-        component: () => import('@/views/admin/BlogPostEditor.vue')
+        component: () => import('@/modules/admin/views/BlogPostEditor.vue')
       },
       {
         path: 'blog/edit/:id',
         name: 'AdminBlogEdit',
-        component: () => import('@/views/admin/BlogPostEditor.vue')
+        component: () => import('@/modules/admin/views/BlogPostEditor.vue')
       }
     ]
   }

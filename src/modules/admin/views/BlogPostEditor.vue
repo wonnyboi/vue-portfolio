@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { ref, onMounted, computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { useBlogStore } from '@/stores/blog'
-import Button from '@/components/ui/Button.vue'
-import Badge from '@/components/ui/Badge.vue'
+import { useBlogStore } from '@/modules/blog/stores/blog'
+import Button from '@/core/components/ui/Button.vue'
+import Badge from '@/core/components/ui/Badge.vue'
 import type { BlogPost } from '@/types'
 
 const route = useRoute()

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onMounted, computed, ref } from 'vue'
-import { useBlogStore } from '@/stores/blog'
-import Card from '@/components/ui/Card.vue'
+import { useBlogStore } from '@/modules/blog/stores/blog'
+import Card from '@/core/components/ui/Card.vue'
 import { useRouter } from 'vue-router'
 
 const store = useBlogStore()

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
-import Button from '@/components/ui/Button.vue'
-import Card from '@/components/ui/Card.vue'
+import Button from '@/core/components/ui/Button.vue'
+import Card from '@/core/components/ui/Card.vue'
 import profileImage from '@/assets/hero-profile.jpg'
 import { useRouter } from 'vue-router'
 
